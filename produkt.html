@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Monis Mitbringsel – Produkt</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #faf7f3;
+    color: #625249;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* HEADER UND NAVIGATION */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #faf7f3;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #eee3da;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #98776b;
+}
+
+nav a {
+    text-decoration: none;
+    color: #625249;
+    margin-left: 22px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #b58e80;
+}
+
+/* PRODUKT-CONTAINER */
+
+.container {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: start;
+}
+
+/* PRODUKTBILDER-SLIDER */
+
+.product-slider {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background: #f0e8df;
+    overflow: hidden;
+}
+
+.product-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* PFEILE */
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    color: #98776b;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.slider-arrow:hover {
+    background: #aa887b;
+    color: white;
+}
+
+.slider-arrow.prev {
+    left: 12px;
+}
+
+.slider-arrow.next {
+    right: 12px;
+}
+
+.slider-arrow.hidden {
+    display: none;
+}
+
+/* BILDNUMMER */
+
+.slider-counter {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.85);
+    color: #98776b;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* PRODUKTINFORMATIONEN */
+
+.product-info h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #98776b;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 2;
+    color: #82746c;
+    margin-bottom: 25px;
+}
+
+.price {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #98776b;
+    margin-bottom: 25px;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 30px;
+    color: #98776b;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #927c71;
+    font-size: 12px;
+    background: #faf7f3;
+}
+
+/* HANDY-NAVIGATION */
+
+@media(max-width: 750px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+}
+
+/* PRODUKTSEITE AUF HANDYS */
+
+@media(max-width: 700px) {
+    .container {
+        grid-template-columns: 1fr;
+        margin: 30px auto;
+        gap: 30px;
+    }
+
+    .product-info h1 {
+        font-size: 34px;
+    }
+
+    .product-slider {
+        height: 350px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER MIT NAVIGATION -->
+
+<header>
+    <div class="logo">Monis Mitbringsel</div>
+
+    <nav>
+        <a href="index.html#start">Startseite</a>
+        <a href="index.html#produkte">Produkte</a>
+        <a href="index.html#ueber">Über mich</a>
+        <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+</header>
+
+<!-- PRODUKT -->
+
+<div class="container">
+
+    <!-- PRODUKTBILDER MIT PFEILEN -->
+
+    <div class="product-slider" id="bilder">
+
+        <button
+            class="slider-arrow prev"
+            id="prevBild"
+            aria-label="Vorheriges Bild">
+            &#8249;
+        </button>
+
+        <img id="sliderBild" src="" alt="Produkt">
+
+        <button
+            class="slider-arrow next"
+            id="nextBild"
+            aria-label="Nächstes Bild">
+            &#8250;
+        </button>
+
+        <div class="slider-counter" id="bildZaehler">
+            1 / 1
+        </div>
+
+    </div>
+
+    <!-- PRODUKTINFORMATIONEN -->
+
+    <div class="product-info">
+
+        <h1 id="name"></h1>
+
+        <p class="description" id="beschreibung"></p>
+
+        <div class="price" id="preis"></div>
+
+        <a href="index.html#produkte" class="back">
+            ← Zurück zur Übersicht
+        </a>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 Monis Mitbringsel – Mit Liebe handgemacht
+</footer>
+
+<script>
+
+// PRODUKTE
+
+const produkte = {
+
+    bademantel: {
+        name: "Baby-Bademantel",
+        bild: "bilder/Bademantel.JPG",
+        beschreibung: "Ein liebevoll gestalteter Bademantel für die Kleinsten. Auf Wunsch mit individueller Stickerei und Namen.",
+        preis: "Preis auf Anfrage"
+    },
+
+    badetuch: {
+        name: "Badetuch",
+        bild: "bilder/Badetuch.JPG",
+        beschreibung: "Ein schönes Badetuch, das individuell gestaltet und personalisiert werden kann.",
+        preis: "Preis auf Anfrage"
+    },
+
+    dekoherz: {
+        name: "Dekoherz",
+        bild: "bilder/Dekoherz.JPG",
+        beschreibung: "Ein liebevoll handgemachtes Dekoherz. Eine schöne Geschenkidee für besondere Menschen.",
+        preis: "Preis auf Anfrage"
+    },
+
+    gesundheit: {
+        name: "Gesundheitsbüchlein",
+        bild: "bilder/Gesundheitsbüchlein.JPG",
+        beschreibung: "Eine schöne und persönliche Gestaltung für das Gesundheitsbüchlein deines Babys.",
+        preis: "Preis auf Anfrage"
+    },
+
+    hapm: {
+        name: "Weitere Kreationen",
+        bild: "bilder/HAPM8371.JPG",
+        beschreibung: "Eine besondere handgemachte Kreation von Monis Mitbringsel.",
+        preis: "Preis auf Anfrage"
+    },
+
+    herzenschale: {
+        name: "Herzenschale",
+        bild: "bilder/HerzenSchale.JPG",
+        beschreibung: "Eine dekorative Schale in Herzform. Mit viel Liebe handgemacht.",
+        preis: "Preis auf Anfrage"
+    },
+
+    kapuzenbadetuch: {
+        name: "Kapuzenbadetuch",
+        bild: "bilder/Kapuzenbadetuch.JPG",
+        beschreibung: "Ein kuscheliges Kapuzenbadetuch für Babys, auf Wunsch mit persönlicher Stickerei.",
+        preis: "Preis auf Anfrage"
+    },
+
+    latz: {
+        name: "Besticktes Lätzli",
+        bild: "bilder/Latz.JPG",
+        beschreibung: "Ein praktisches Lätzli mit liebevoller und individueller Stickerei.",
+        preis: "Preis auf Anfrage"
+    },
+
+    nuscheli: {
+        name: "Nuscheli & Tüchlein",
+        bild: "bilder/Nuscheli.JPG",
+        beschreibung: "Ein liebevoll besticktes Nuscheli. Auch als persönliches Geschenk zur Geburt geeignet.",
+        preis: "Preis auf Anfrage"
+    },
+
+    behaelter: {
+        name: "Runder Behälter",
+        bild: "bilder/runderbehäter.JPG",
+        beschreibung: "Ein handgemachter Behälter als schöne und praktische Dekoration.",
+        preis: "Preis auf Anfrage"
+    },
+
+    zwerg: {
+        name: "Runder Zwergbehälter",
+        bild: "bilder/runderzwergbehälter.JPG",
+        beschreibung: "Ein kleines handgemachtes Dekorationsstück.",
+        preis: "Preis auf Anfrage"
+    },
+
+    dekohaus: {
+        name: "Tischdekohaus",
+
+        bilder: [
+            "bilder/Tischdekohaus.JPG",
+            "bilder/Tischdekokerze.JPG",
+            "bilder/Tischdekokerzeblau.JPG",
+            "bilder/Tischdekokerzeblume.JPG",
+            "bilder/TischdekoKerzenschale.JPG",
+            "bilder/Tischdekovase.JPG"
+        ],
+
+        beschreibung: "Eine besondere Dekoration für einen liebevoll gedeckten Tisch.",
+        preis: "Preis auf Anfrage"
+    }
+
+};
+
+
+// PRODUKT AUS DER URL LESEN
+
+const parameter = new URLSearchParams(window.location.search);
+const id = parameter.get("produkt");
+const produkt = produkte[id];
+
+
+// PRODUKT ANZEIGEN
+
+if (produkt) {
+
+    document.getElementById("name").textContent =
+        produkt.name;
+
+    document.getElementById("beschreibung").textContent =
+        produkt.beschreibung;
+
+    document.getElementById("preis").textContent =
+        produkt.preis;
+
+    document.title =
+        produkt.name + " – Monis Mitbringsel";
+
+
+    // BILDER-LISTE
+
+    const bilderListe = produkt.bilder || [produkt.bild];
+    let aktuellesBild = 0;
+
+
+    // ELEMENTE
+
+    const sliderBild =
+        document.getElementById("sliderBild");
+
+    const prevBild =
+        document.getElementById("prevBild");
+
+    const nextBild =
+        document.getElementById("nextBild");
+
+    const bildZaehler =
+        document.getElementById("bildZaehler");
+
+
+    // BILD ANZEIGEN
+
+    function zeigeBild(index) {
+
+        aktuellesBild = index;
+
+        sliderBild.src = bilderListe[aktuellesBild];
+        sliderBild.alt = produkt.name;
+
+        bildZaehler.textContent =
+            (aktuellesBild + 1) + " / " + bilderListe.length;
+
+
+        // BEI NUR EINEM BILD PFEILE AUSBLENDEN
+
+        if (bilderListe.length <= 1) {
+
+            prevBild.classList.add("hidden");
+            nextBild.classList.add("hidden");
+            bildZaehler.style.display = "none";
+
+        } else {
+
+            prevBild.classList.remove("hidden");
+            nextBild.classList.remove("hidden");
+            bildZaehler.style.display = "block";
+
+        }
+
+    }
+
+
+    // VORHERIGES BILD
+
+    prevBild.addEventListener("click", function() {
+
+        aktuellesBild--;
+
+        if (aktuellesBild < 0) {
+            aktuellesBild = bilderListe.length - 1;
+        }
+
+        zeigeBild(aktuellesBild);
+
+    });
+
+
+    // NÄCHSTES BILD
+
+    nextBild.addEventListener("click", function() {
+
+        aktuellesBild++;
+
+        if (aktuellesBild >= bilderListe.length) {
+            aktuellesBild = 0;
+        }
+
+        zeigeBild(aktuellesBild);
+
+    });
+
+
+    // ERSTES BILD BEIM ÖFFNEN
+
+    zeigeBild(0);
+
+
+} else {
+
+    document.querySelector(".container").innerHTML =
+        "<h2>Produkt nicht gefunden</h2>" +
+        "<a href='index.html'>Zurück zur Startseite</a>";
+
+}
+
+</script>
+
+</body>
+</html>

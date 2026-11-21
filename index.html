@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Monis Mitbringsel – Mit Liebe handgemacht</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #faf7f3;
+    color: #625249;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #faf7f3;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #98776b;
+}
+
+nav a {
+    text-decoration: none;
+    color: #625249;
+    margin-left: 22px;
+    font-size: 12px;
+}
+
+nav a:hover {
+    color: #b58e80;
+}
+
+.hero {
+    min-height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background:
+      linear-gradient(#0002, #0002),
+      url('titelbild.jpg') center/cover;
+}
+
+.hero-content {
+    background: rgba(250,247,243,0.88);
+    padding: 55px 35px;
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    font-weight: 400;
+    color: #876b60;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #aa887b;
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #89695d;
+}
+
+section {
+    padding: 85px 9%;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #98776b;
+}
+
+.intro {
+    max-width: 650px;
+    margin: auto;
+    font-size: 14px;
+    line-height: 2;
+    color: #82746c;
+}
+
+.products {
+    background: #f0e8df;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.product {
+    display: block;
+    background: #faf7f3;
+    padding-bottom: 22px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #625249;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+    
+.product:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px #00000015;
+}
+
+.product img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product:hover img {
+    transform: scale(1.05);
+}
+
+.product h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 400;
+    margin-top: 18px;
+    color: #80675c;
+}
+
+.product p {
+    font-size: 12px;
+    margin: 10px 12px 0;
+    line-height: 1.7;
+    color: #897a71;
+}
+
+.product-hint {
+    display: block;
+    font-size: 10px;
+    color: #aa887b;
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+
+.contact {
+    background: #eee3da;
+}
+
+.contact p {
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 11px;
+    background: #faf7f3;
+    color: #927c71;
+}
+
+@media(max-width: 750px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-content {
+        padding: 35px 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product img {
+        height: 170px;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+}
+
+@media(max-width: 430px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product img {
+        height: 240px;
+    }
+}
+
+.hero {
+    min-height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(#0002, #0002),
+        url('Bilder/Titelbild.png') center/cover no-repeat;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Monis Mitbringsel</div>
+
+    <nav>
+        <a href="#start">Startseite</a>
+        <a href="#produkte">Produkte</a>
+        <a href="#ueber">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+</header>
+
+<div class="hero" id="start">
+    <div class="hero-content">
+        <h1>Monis Mitbringsel</h1>
+
+        <p>
+            Kleine Dinge, grosse Freude.<br>
+            Mit Liebe handgemacht und individuell gestaltet.
+        </p>
+
+        <a href="#produkte" class="btn">
+            PRODUKTE ENTDECKEN
+        </a>
+    </div>
+</div>
+
+<section id="ueber">
+    <h2>Mit Liebe gemacht</h2>
+
+    <p class="intro">
+        Willkommen bei Monis Mitbringsel!
+        Hier findest du liebevoll handgemachte Produkte,
+        individuelle Stickereien und besondere Geschenkideen.
+        Jedes Stück wird mit viel Herz und Liebe zum Detail gestaltet.
+    </p>
+</section>
+
+<section class="products" id="produkte">
+
+    <h2>Meine Produkte</h2>
+
+    <p class="intro">
+        Ob für die Kleinsten oder als besondere Dekoration
+        für dein Zuhause – hier ist für jeden etwas dabei.
+        Klicke auf ein Produkt, um mehr darüber zu erfahren.
+    </p>
+
+    <div class="product-grid">
+
+        <a class="product" href="produkt.html?produkt=bademantel">
+            <img src="bilder/Bademantel.JPG" alt="Bademantel">
+            <h3>Bademäntel</h3>
+            <p>Liebevoll bestickte Bademäntel.</p>
+            <span class="product-hint">MEHR ERFAHREN →</span>
+        </a>
+
+        <a class="product" href="produkt.html?produkt=badetuch">
+            <img src="bilder/Badetuch.JPG" alt="Badetuch">
+            <h3>Badetücher</h3>
+            <p>Schöne und individuelle Badetücher.</p>
+            <span class="product-hint">MEHR ERFAHREN →</span>
+        </a>
+
+        <a class="product" href="produkt.html?produkt=dekoherz">
+            <img src="bilder/Dekoherz.JPG" alt="Dekoherz">
+            <h3>Dekoherzen</h3>
+            <p>Liebevolle Dekoration für dein Zuhause.</p>
+            <span class="product-hint">MEHR ERFAHREN →</span>
+        </a>
+
+        <a class="product" href="produkt.html?produkt=gesundheit">
+            <img src="bilder/Gesundheitsbüchlein.JPG" alt="Gesundheitsbüchlein">
+            <h3>Gesundheitsbüchlein</h3>
+            <p>Persönlich gestaltete Gesundheitsbüchlein.</p>
+            <span class="product-hint">MEHR ERFAHREN →</span>
+        </a>
+
+        <a class="product" href="produkt.html?produkt=kapuzenbadetuch">
+            <img src="bilder/Kapuzenbadetuch.JPG" alt="Kapuzenbadetuch">
+            <h3>Kapuzenbadetücher</h3>
+            <p>Kuschelige Badetücher mit Stickerei.</p>
+            <span class="product-hint">MEHR ERFAHREN →</span>
+        </a>
+
+        <a class="product" href="produkt.html?produkt=latz">
+            <img src="bilder/Latz.JPG" alt="Lätzli">
+            <h3>Lätzli</h3>
+            <p>Persönliche Lätzchen für die Kleinsten.</p>
+            <span class="product-hint">MEHR ERFAHREN →</span>
+        </a>
+
+        <a class="product" href="produkt.html?produkt=nuscheli">
+            <img src="bilder/Nuscheli.JPG" alt="Nuscheli">
+            <h3>Nuscheli & Tüchlein</h3>
+            <p>Individuell bestickte Begleiter.</p>
+            <span class="product-hint">MEHR ERFAHREN →</span>
+        </a>
+
+        <a class="product" href="produkt.html?produkt=behaelter">
+            <img src="bilder/runderbehäter.JPG" alt="Runder Behälter">
+            <h3>Handgemachte Behälter</h3>
+            <p>Praktische und dekorative Einzelstücke.</p>
+            <span class="product-hint">MEHR ERFAHREN →</span>
+        </a>
+
+        <a class="product" href="produkt.html?produkt=dekohaus">
+            <img src="bilder/Tischdekohaus.JPG" alt="Tischdekohaus">
+            <h3>Tischdeko</h3>
+            <p>Besondere Dekoration für deinen Tisch.</p>
+            <span class="product-hint">MEHR ERFAHREN →</span>
+        </a>
+
+    </div>
+</section>
+
+<section>
+    <h2>Besondere Geschenke</h2>
+
+    <p class="intro">
+        Du suchst ein persönliches Geschenk zur Geburt,
+        Taufe oder einfach eine kleine Überraschung?
+        Bei Monis Mitbringsel findest du liebevolle
+        Einzelstücke, die Freude bereiten.
+    </p>
+</section>
+
+<section class="contact" id="kontakt">
+    <h2>Kontakt</h2>
+
+    <p>Hast du Fragen oder einen besonderen Wunsch?</p>
+    <p>Ich freue mich auf deine Nachricht!</p>
+
+    <p>Instagram: @monismitbringsel</p>
+
+    <a href="https://instagram.com/" class="btn">
+        INSTAGRAM BESUCHEN
+    </a>
+</section>
+
+<footer>
+    © 2026 Monis Mitbringsel – Mit Liebe handgemacht
+</footer>
+
+</body>
+</html>
